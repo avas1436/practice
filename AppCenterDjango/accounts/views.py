@@ -4,5 +4,4 @@ from django.shortcuts import render
 
 
 def account_list(request):
-    accounts = ["avAs", "sama", "rez"]
-    return render(request, "accounts/list.html", {"accounts": accounts})
+    return render(request, "login.html")
