@@ -18,12 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from AppCenterDjango.views import home_view
-
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home_view, name="home"),
-    path("accounts/", include("accounts.urls")),
-    path("orders/", include("orders.urls")),
-    path("products/", include("products.urls")),
+    path("", include("core.urls", namespace="core")),
+    path("accounts/", include("accounts.urls", namespace="accounts")),
+    path("orders/", include("orders.urls")),  # , namespace="orders"
+    path("products/", include("products.urls", namespace="products")),
 ]
