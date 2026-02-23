@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block category_nav %} {% include
+"components/category_nav.html" %} {% endblock %} {% block content %} {% include
+"components/hero.html" %}
+
+<section>
+    <div class="section-header">
+        <h2 class="section-title">محصولات منتخب</h2>
+    </div>
+
+    <div class="products-grid">
+        {% for product in products %} {% include "components/product_card.html" %} {%
+        endfor %}
+    </div>
+</section>
+
+{% endblock %}
