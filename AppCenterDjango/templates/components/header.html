@@ -15,7 +15,7 @@
                     name="q"
                     class="search-input"
                     placeholder="جستجوی محصول..."
-                    value="{{ search_query | default('') }}"
+                    value="{{ search_query|default:"" }}"
                 />
                 <span class="search-icon">🔍</span>
             </form>
@@ -29,7 +29,7 @@
 
                 <a href="/cart" class="btn-cart">
                     <span>سبد خرید</span>
-                    <span class="btn-cart-count"> {{ cart_count | default(0) }} </span>
+                    <span class="btn-cart-count">{{ cart_count|default:"0" }}</span>
                 </a>
             </div>
         </div>
