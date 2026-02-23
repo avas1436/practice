@@ -1,38 +1,49 @@
 <section class="hero">
     <div class="hero-card">
-        <div class="hero-badge">{{ hero.badge }}</div>
-        <h1 class="hero-title">{{ hero.title }}</h1>
-        <p class="hero-subtitle">{{ hero.subtitle }}</p>
-        {% if hero.highlights %}
+        <div class="hero-badge">
+            <span>🔥</span>
+            <span>حراج روزانه دالر تری فارسی</span>
+        </div>
+        <h1 class="hero-title">هر چیزی که لازم داری، با قیمت‌های ریز و دوست‌داشتنی</h1>
+        <p class="hero-subtitle">
+            از لوازم خانه تا خوراکی و نظم‌دهنده‌ها؛ همه‌چیز را یک‌جا و با قیمت اقتصادی
+            پیدا کن.
+        </p>
+
         <div class="hero-highlight">
-            {% for item in hero.highlights %}
             <div class="hero-highlight-item">
-                <span>{{ item.icon }}</span>
-                <span>{{ item.text }}</span>
+                <span>🚚</span>
+                <span>ارسال سریع در سراسر ایران</span>
             </div>
-            {% endfor %}
+            <div class="hero-highlight-item">
+                <span>✅</span>
+                <span>ضمانت کیفیت و اصالت کالا</span>
+            </div>
+            <div class="hero-highlight-item">
+                <span>💳</span>
+                <span>پرداخت امن اینترنتی</span>
+            </div>
         </div>
-        {% endif %} {% if hero.cta %}
+
         <div class="hero-cta">
-            {% for btn in hero.cta %}
-            <a href="{{ btn.link }}" class="{{ btn.type }}">{{ btn.text }}</a>
-            {% endfor %}
+            <button class="btn-primary">مشاهده پیشنهادهای امروز</button>
+            <button class="btn-ghost">مشاهده همه دسته‌بندی‌ها</button>
+            <span class="hero-note">امروز بیش از ۵۰ محصول با تخفیف ویژه فعال است.</span>
         </div>
-        {% endif %}
     </div>
 
-    {% if hero.visual %}
     <aside class="hero-visual">
-        <div class="hero-visual-tag">{{ hero.visual.tag }}</div>
-        <div class="hero-visual-main">{{ hero.visual.main }}</div>
-        <div class="hero-visual-sub">{{ hero.visual.sub }}</div>
+        <div class="hero-visual-tag">پیشنهاد لحظه‌ای</div>
+        <div class="hero-visual-main">پک نظم‌دهنده کشو و کمد</div>
+        <div class="hero-visual-sub">
+            مناسب آشپزخانه، اتاق خواب و میز کار؛ هر پک فقط با یک قیمت اقتصادی.
+        </div>
         <div class="hero-visual-badges">
-            {% for b in hero.visual.badges %}
-            <div class="hero-visual-badge">{{ b }}</div>
-            {% endfor %}
+            <div class="hero-visual-badge">تا ۳۰٪ تخفیف</div>
+            <div class="hero-visual-badge">پرفروش این هفته</div>
+            <div class="hero-visual-badge">موجودی محدود</div>
         </div>
         <div class="hero-visual-circle"></div>
-        <div class="hero-visual-tagline">{{ hero.visual.tagline }}</div>
+        <div class="hero-visual-tagline">همه‌چیز مرتب، با کمترین هزینه.</div>
     </aside>
-    {% endif %}
 </section>

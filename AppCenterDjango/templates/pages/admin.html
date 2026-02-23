@@ -1,15 +1,59 @@
-{% extends "base.html" %} {% block title %}پنل ادمین - دالر تری فارسی{% endblock %} {%
-block description %}مدیریت محصولات و سفارش‌ها{% endblock %} {% block content %}
-<section>
-    <h1 class="section-title">پنل ادمین</h1>
-    <div class="hero-card">
-        <h2 class="hero-title">مدیریت محصولات</h2>
-        <a href="/admin/products" class="btn-primary">لیست محصولات</a>
-        <a href="/admin/products/new" class="btn-ghost">افزودن محصول جدید</a>
+{% extends 'base.html' %} {% block title %}پنل مدیریت | دالر تری فارسی{% endblock %} {%
+block content %}
+<h1 class="section-title">پنل مدیریت</h1>
+<p class="hero-subtitle">این صفحه مخصوص مدیران فروشگاه است.</p>
+
+<div
+    style="
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin: 2rem 0;
+    "
+>
+    <div class="card text-center">
+        <span style="font-size: 2rem">📦</span>
+        <h3>مدیریت محصولات</h3>
     </div>
-    <div class="hero-card">
-        <h2 class="hero-title">مدیریت سفارش‌ها</h2>
-        <a href="/admin/orders" class="btn-primary">لیست سفارش‌ها</a>
+    <div class="card text-center">
+        <span style="font-size: 2rem">📋</span>
+        <h3>مدیریت سفارشات</h3>
     </div>
-</section>
+    <div class="card text-center">
+        <span style="font-size: 2rem">👥</span>
+        <h3>مدیریت کاربران</h3>
+    </div>
+    <div class="card text-center">
+        <span style="font-size: 2rem">⚙️</span>
+        <h3>تنظیمات</h3>
+    </div>
+</div>
+
+<div class="card">
+    <h2>آخرین سفارشات</h2>
+    <table style="width: 100%; margin-top: 1rem">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>کاربر</th>
+                <th>تاریخ</th>
+                <th>وضعیت</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>۱۰۲۳</td>
+                <td>علی علوی</td>
+                <td>۱۴۰۴/۱۲/۰۶</td>
+                <td>پرداخت شده</td>
+            </tr>
+            <tr>
+                <td>۱۰۲۲</td>
+                <td>مریم محمدی</td>
+                <td>۱۴۰۴/۱۲/۰۵</td>
+                <td>در حال ارسال</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 {% endblock %}

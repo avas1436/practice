@@ -1,21 +1,45 @@
-{% extends "base.html" %} {% block title %}حساب کاربری - دالر تری فارسی{% endblock %} {%
-block description %}اطلاعات و سفارش‌های کاربر{% endblock %} {% block content %}
-<section>
-    <h1 class="section-title">حساب کاربری</h1>
-    <div class="hero-card">
-        <h2 class="hero-title">اطلاعات شخصی</h2>
-        <p>نام: {{ user.name }}</p>
-        <p>ایمیل: {{ user.email }}</p>
-    </div>
-    <div class="hero-card">
-        <h2 class="hero-title">سفارش‌های اخیر</h2>
-        <ul>
-            {% for order in orders %}
-            <li>سفارش #{{ order.id }} - {{ order.total_price }}</li>
-            {% else %}
-            <li>هیچ سفارشی ثبت نشده است.</li>
-            {% endfor %}
+{% extends 'base.html' %} {% block title %}حساب کاربری | دالر تری فارسی{% endblock %} {%
+block content %}
+<h1 class="section-title">حساب کاربری من</h1>
+
+<div
+    style="
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    "
+>
+    <div class="card">
+        <h2>پنل کاربری</h2>
+        <ul style="list-style: none; margin-top: 1rem">
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6">پروفایل</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6">
+                سفارش‌های من
+            </li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6">آدرس‌ها</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6">تنظیمات</li>
+            <li style="padding: 0.5rem 0">خروج</li>
         </ul>
     </div>
-</section>
+
+    <div class="card">
+        <h2>اطلاعات حساب</h2>
+        <form style="margin-top: 1rem">
+            <div class="form-group">
+                <label class="form-label">نام کامل</label>
+                <input type="text" class="form-input" value="علی علوی" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">ایمیل</label>
+                <input type="email" class="form-input" value="ali@example.com" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">شماره موبایل</label>
+                <input type="text" class="form-input" value="۰۹۱۲۳۴۵۶۷۸۹" />
+            </div>
+            <button type="submit" class="btn btn-primary">ذخیره تغییرات</button>
+        </form>
+    </div>
+</div>
 {% endblock %}

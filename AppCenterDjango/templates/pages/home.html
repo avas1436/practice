@@ -1,51 +1,24 @@
-{% extends "base.html" %} {% block title %}صفحه اصلی - دالر تری فارسی{% endblock %} {%
-block description %}خرید آنلاین سریع و اقتصادی{% endblock %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}خانه | دالر تری فارسی{%
+endblock %} {% block content %} {% include 'components/hero.html' %}
 
-<!-- Hero -->
-<section class="hero">
-    <div class="hero-card">
-        <div class="hero-badge">🔥 حراج روزانه دالر تری فارسی</div>
-        <h1 class="hero-title">هر چیزی که لازم داری، با قیمت‌های ریز و دوست‌داشتنی</h1>
-        <p class="hero-subtitle">
-            از لوازم خانه تا خوراکی و نظم‌دهنده‌ها؛ همه‌چیز را یک‌جا پیدا کن.
-        </p>
-        <div class="hero-cta">
-            <a href="/products" class="btn-primary">مشاهده پیشنهادهای امروز</a>
-            <a href="/categories" class="btn-ghost">مشاهده همه دسته‌بندی‌ها</a>
-        </div>
-    </div>
-</section>
-
-<!-- محصولات -->
 <section>
     <div class="section-header">
         <div>
             <h2 class="section-title">محصولات منتخب امروز</h2>
-            <p class="section-subtitle">
-                چند نمونه محصول برای تست ظاهر؛ در پروژه واقعی از سرور پر شود.
-            </p>
+            <p class="section-subtitle">بر اساس بازدیدهای اخیر و پیشنهادهای ویژه</p>
         </div>
-        <a href="/products" class="section-link">مشاهده همه محصولات</a>
+        <div class="section-link">مشاهده همه محصولات</div>
     </div>
 
     <div class="products-grid">
-        {% for product in products %}
-        <article class="product-card">
-            <div class="product-image">{{ product.image or "تصویر محصول" }}</div>
-            <h3 class="product-title">{{ product.title }}</h3>
-            <div class="product-meta">
-                <span class="product-price">{{ product.price }}</span>
-                <span class="product-tag">{{ product.category }}</span>
-            </div>
-            <div class="product-actions">
-                <button class="btn-add">افزودن به سبد</button>
-                {% if product.badge %}
-                <span class="product-badge-small">{{ product.badge }}</span>
-                {% endif %}
-            </div>
-        </article>
-        {% endfor %}
+        {% include 'components/product_card.html' with title="لیوان شیشه‌ای ساده"
+        price="۴۹,۰۰۰ تومان" category="خانه و آشپزخانه" badge="ارسال سریع" %} {% include
+        'components/product_card.html' with title="ست خودکار رنگی برای یادداشت"
+        price="۳۹,۰۰۰ تومان" category="لوازم تحریر" badge="پرفروش" %} {% include
+        'components/product_card.html' with title="ظرف نظم‌دهنده یخچال" price="۵۹,۰۰۰
+        تومان" category="نظم‌دهنده" badge="موجودی محدود" %} {% include
+        'components/product_card.html' with title="اسنک و چیپس میکس" price="۲۹,۰۰۰
+        تومان" category="تنقلات" badge="تازه‌رسیده" %}
     </div>
 </section>
-
 {% endblock %}

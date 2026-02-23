@@ -1,25 +1,18 @@
-{% extends "base.html" %} {% block title %}دسته‌بندی - دالر تری فارسی{% endblock %} {%
-block description %}محصولات بر اساس دسته‌بندی{% endblock %} {% block content %}
-<section>
-    <h1 class="section-title">{{ category.name }}</h1>
-    {% if products %}
-    <div class="products-grid">
-        {% for product in products %}
-        <article class="product-card">
-            <div class="product-image">{{ product.image or "تصویر محصول" }}</div>
-            <h3 class="product-title">{{ product.title }}</h3>
-            <div class="product-meta">
-                <span class="product-price">{{ product.price }}</span>
-                <span class="product-tag">{{ product.category }}</span>
-            </div>
-            <div class="product-actions">
-                <button class="btn-add">افزودن به سبد</button>
-            </div>
-        </article>
-        {% endfor %}
-    </div>
-    {% else %}
-    <p>هیچ محصولی در این دسته‌بندی موجود نیست.</p>
-    {% endif %}
-</section>
+{% extends 'base.html' %} {% block title %}دسته‌بندی | دالر تری فارسی{% endblock %} {%
+block content %}
+<div class="section-header">
+    <h1 class="section-title">دسته‌بندی: خانه و آشپزخانه</h1>
+    <span class="section-subtitle">۱۲ محصول یافت شد.</span>
+</div>
+
+<div class="products-grid">
+    {% include 'components/product_card.html' with title="لیوان شیشه‌ای ساده"
+    price="۴۹,۰۰۰ تومان" category="خانه و آشپزخانه" badge="ارسال سریع" %} {% include
+    'components/product_card.html' with title="ست قاشق و چنگال ۶ نفره" price="۸۹,۰۰۰
+    تومان" category="خانه و آشپزخانه" badge="پرفروش" %} {% include
+    'components/product_card.html' with title="ظرف نگهدارنده مواد غذایی" price="۶۵,۰۰۰
+    تومان" category="خانه و آشپزخانه" badge="" %} {% include
+    'components/product_card.html' with title="دستکش فر" price="۳۵,۰۰۰ تومان"
+    category="خانه و آشپزخانه" badge="موجودی محدود" %}
+</div>
 {% endblock %}

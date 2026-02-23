@@ -1,15 +1,15 @@
+{% comment %} variables: title, price, category, badge (optional) {% endcomment %}
 <article class="product-card">
-    <div class="product-image">{{ product.image or "تصویر محصول" }}</div>
-    <h3 class="product-title">{{ product.title }}</h3>
+    <div class="product-image">تصویر محصول</div>
+    <h3 class="product-title">{{ title|default:"لیوان شیشه‌ای ساده" }}</h3>
     <div class="product-meta">
-        <span class="product-price">{{ product.price }}</span>
-        <span class="product-tag">{{ product.category }}</span>
+        <span class="product-price">{{ price|default:"۴۹,۰۰۰ تومان" }}</span>
+        <span class="product-tag">{{ category|default:"خانه و آشپزخانه" }}</span>
     </div>
     <div class="product-actions">
-        {% if product.add_to_cart %}
-        <button class="btn-add">{{ product.add_to_cart }}</button>
-        {% endif %} {% if product.badge %}
-        <span class="product-badge-small">{{ product.badge }}</span>
+        <button class="btn-add">افزودن به سبد</button>
+        {% if badge %}
+        <span class="product-badge-small">{{ badge }}</span>
         {% endif %}
     </div>
 </article>

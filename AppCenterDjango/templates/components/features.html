@@ -1,35 +1,57 @@
-<section>
-    <div class="section-header">
-        <div>
-            <h1 class="section-title">ویژگی‌های دالر تری فارسی</h1>
-            <p class="section-subtitle">چرا مشتریان ما خرید از ما را انتخاب می‌کنند؟</p>
+{% extends 'base.html' %} {% block title %}ویژگی‌ها | دالر تری فارسی{% endblock %} {%
+block content %}
+<div class="card">
+    <h1 class="section-title">چرا دالر تری فارسی؟</h1>
+    <div
+        style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        "
+    >
+        <div
+            class="hero-highlight-item"
+            style="
+                border: none;
+                background: var(--color-primary-soft);
+                padding: 1rem;
+                display: block;
+                text-align: center;
+            "
+        >
+            <span style="font-size: 2rem">💎</span>
+            <h3>قیمت اقتصادی</h3>
+            <p>همه محصولات با کمترین حاشیه سود عرضه می‌شوند.</p>
+        </div>
+        <div
+            class="hero-highlight-item"
+            style="
+                border: none;
+                background: var(--color-primary-soft);
+                padding: 1rem;
+                display: block;
+                text-align: center;
+            "
+        >
+            <span style="font-size: 2rem">📦</span>
+            <h3>ارسال سریع</h3>
+            <p>ارسال به سراسر ایران در کمترین زمان ممکن.</p>
+        </div>
+        <div
+            class="hero-highlight-item"
+            style="
+                border: none;
+                background: var(--color-primary-soft);
+                padding: 1rem;
+                display: block;
+                text-align: center;
+            "
+        >
+            <span style="font-size: 2rem">🛡️</span>
+            <h3>ضمانت بازگشت</h3>
+            <p>در صورت نارضایتی، کالا را بازگردانید.</p>
         </div>
     </div>
-</section>
-
-<section style="display: grid; gap: 1.5rem; margin-top: 1.5rem">
-    <article class="hero-card">
-        <h2 class="hero-title">💰 قیمت‌های اقتصادی</h2>
-        <p class="hero-subtitle">
-            ما تلاش می‌کنیم محصولات متنوع را با قیمت مناسب ارائه دهیم.
-        </p>
-    </article>
-    <article class="hero-card">
-        <h2 class="hero-title">🚚 ارسال سریع و مطمئن</h2>
-        <p class="hero-subtitle">
-            سفارش‌ها در سریع‌ترین زمان ممکن پردازش و ارسال می‌شوند.
-        </p>
-    </article>
-    <article class="hero-card">
-        <h2 class="hero-title">🔒 پرداخت امن</h2>
-        <p class="hero-subtitle">
-            تمام پرداخت‌ها از طریق درگاه‌های امن بانکی انجام می‌شود.
-        </p>
-    </article>
-    <article class="hero-card">
-        <h2 class="hero-title">📦 تنوع بالا</h2>
-        <p class="hero-subtitle">
-            از لوازم خانه تا خوراکی و محصولات فصلی، همه چیز در یک جا.
-        </p>
-    </article>
-</section>
+</div>
+{% endblock %}

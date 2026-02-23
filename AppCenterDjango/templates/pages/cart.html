@@ -1,34 +1,55 @@
-{% extends "base.html" %} {% block title %}سبد خرید - دالر تری فارسی{% endblock %} {%
-block description %}نمایش محصولات موجود در سبد خرید{% endblock %} {% block content %}
-<section>
-    <h1 class="section-title">سبد خرید شما</h1>
-    {% if cart.items %}
-    <div class="products-grid">
-        {% for item in cart.items %}
-        <article class="product-card">
-            <div class="product-image">{{ item.image or "تصویر محصول" }}</div>
-            <h3 class="product-title">{{ item.title }}</h3>
-            <div class="product-meta">
-                <span class="product-price">{{ item.price }}</span>
-                <span class="product-tag">{{ item.category }}</span>
-            </div>
-            <div class="product-actions">
-                <button class="btn-add">حذف از سبد</button>
-            </div>
-        </article>
-        {% endfor %}
+{% extends 'base.html' %} {% block title %}سبد خرید | دالر تری فارسی{% endblock %} {%
+block content %}
+<h1 class="section-title">سبد خرید شما</h1>
+
+<div style="margin-top: 1.5rem">
+    <div class="card" style="padding: 0">
+        <table style="width: 100%; border-collapse: collapse">
+            <thead style="background: #f3f4f6; text-align: right">
+                <tr>
+                    <th style="padding: 0.75rem">محصول</th>
+                    <th style="padding: 0.75rem">قیمت</th>
+                    <th style="padding: 0.75rem">تعداد</th>
+                    <th style="padding: 0.75rem">جمع</th>
+                    <th style="padding: 0.75rem"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 0.75rem">لیوان شیشه‌ای ساده</td>
+                    <td style="padding: 0.75rem">۴۹,۰۰۰ تومان</td>
+                    <td style="padding: 0.75rem">۲</td>
+                    <td style="padding: 0.75rem">۹۸,۰۰۰ تومان</td>
+                    <td style="padding: 0.75rem">
+                        <button class="btn-add" style="background: #ef4444">حذف</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem">ست خودکار رنگی</td>
+                    <td style="padding: 0.75rem">۳۹,۰۰۰ تومان</td>
+                    <td style="padding: 0.75rem">۱</td>
+                    <td style="padding: 0.75rem">۳۹,۰۰۰ تومان</td>
+                    <td style="padding: 0.75rem">
+                        <button class="btn-add" style="background: #ef4444">حذف</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div style="margin-top: 1rem">
-        <strong>جمع کل: {{ cart.total_price }}</strong>
-    </div>
-    <a
-        href="/checkout"
-        class="btn-primary"
-        style="margin-top: 1rem; display: inline-block"
-        >ادامه به پرداخت</a
+
+    <div
+        style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        "
     >
-    {% else %}
-    <p>سبد خرید شما خالی است.</p>
-    {% endif %}
-</section>
+        <div>
+            <span class="hero-subtitle">جمع کل: </span>
+            <span class="product-price" style="font-size: 1.2rem">۱۳۷,۰۰۰ تومان</span>
+        </div>
+        <button class="btn-primary">ادامه فرآیند خرید</button>
+    </div>
+</div>
 {% endblock %}
