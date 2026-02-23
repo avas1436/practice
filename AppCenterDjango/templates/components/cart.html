@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>سبد خرید شما</h1>
+
+{% if cart_items %}
+<ul>
+    {% for item in cart_items %}
+    <li>{{ item.title }} - {{ item.quantity }} × {{ item.price }}</li>
+    {% endfor %}
+</ul>
+
+<div>جمع کل: {{ total_price }} تومان</div>
+{% else %}
+<p>سبد خرید شما خالی است.</p>
+{% endif %} {% endblock %}
