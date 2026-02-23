@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>تماس با ما</h1>
+
+<form method="post" action="/contact">
+    <input type="text" name="name" placeholder="نام" />
+    <input type="email" name="email" placeholder="ایمیل" />
+    <textarea name="message" placeholder="پیام شما"></textarea>
+    <button type="submit">ارسال</button>
+</form>
+
+{% endblock %}
