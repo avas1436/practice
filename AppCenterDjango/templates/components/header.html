@@ -1,0 +1,37 @@
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <div class="brand">
+                <div class="brand-logo">₮</div>
+                <div>
+                    <div class="brand-text-main">دالر تری فارسی</div>
+                    <div class="brand-text-sub">هر خرید، یک صرفه‌جویی هوشمند</div>
+                </div>
+            </div>
+
+            <form class="search-box" method="get" action="/search">
+                <input
+                    type="search"
+                    name="q"
+                    class="search-input"
+                    placeholder="جستجوی محصول..."
+                    value="{{ search_query | default('') }}"
+                />
+                <span class="search-icon">🔍</span>
+            </form>
+
+            <div class="header-actions">
+                {% if user %}
+                <a href="/account" class="header-link">حساب من</a>
+                {% else %}
+                <a href="/auth" class="header-link">ورود / ثبت‌نام</a>
+                {% endif %}
+
+                <a href="/cart" class="btn-cart">
+                    <span>سبد خرید</span>
+                    <span class="btn-cart-count"> {{ cart_count | default(0) }} </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
