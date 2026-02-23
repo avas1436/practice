@@ -1,15 +1,33 @@
-{% extends "base.html" %} {% block content %}
-
-<h1>سبد خرید شما</h1>
-
-{% if cart_items %}
-<ul>
-    {% for item in cart_items %}
-    <li>{{ item.title }} - {{ item.quantity }} × {{ item.price }}</li>
-    {% endfor %}
-</ul>
-
-<div>جمع کل: {{ total_price }} تومان</div>
-{% else %}
-<p>سبد خرید شما خالی است.</p>
-{% endif %} {% endblock %}
+{% extends "base.html" %} {% block title %}ثبت نام - دالر تری فارسی{% endblock %} {%
+block description %}ثبت نام کاربران جدید{% endblock %} {% block content %}
+<section style="max-width: 400px; margin: auto">
+    <h1 class="section-title">ثبت نام</h1>
+    <form method="POST" action="/register">
+        <div class="hero-card" style="display: flex; flex-direction: column; gap: 1rem">
+            <input
+                type="text"
+                name="name"
+                placeholder="نام کامل"
+                class="search-input"
+                required
+            />
+            <input
+                type="email"
+                name="email"
+                placeholder="ایمیل"
+                class="search-input"
+                required
+            />
+            <input
+                type="password"
+                name="password"
+                placeholder="رمز عبور"
+                class="search-input"
+                required
+            />
+            <button type="submit" class="btn-primary">ثبت نام</button>
+            <a href="/login" class="btn-ghost" style="text-align: center">ورود</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

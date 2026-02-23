@@ -1,8 +1,15 @@
-{% extends "base.html" %} {% block content %}
-
-<h1>پنل مدیریت</h1>
-
-<a href="/admin/products">مدیریت محصولات</a>
-<a href="/admin/orders">مدیریت سفارش‌ها</a>
-
+{% extends "base.html" %} {% block title %}پنل ادمین - دالر تری فارسی{% endblock %} {%
+block description %}مدیریت محصولات و سفارش‌ها{% endblock %} {% block content %}
+<section>
+    <h1 class="section-title">پنل ادمین</h1>
+    <div class="hero-card">
+        <h2 class="hero-title">مدیریت محصولات</h2>
+        <a href="/admin/products" class="btn-primary">لیست محصولات</a>
+        <a href="/admin/products/new" class="btn-ghost">افزودن محصول جدید</a>
+    </div>
+    <div class="hero-card">
+        <h2 class="hero-title">مدیریت سفارش‌ها</h2>
+        <a href="/admin/orders" class="btn-primary">لیست سفارش‌ها</a>
+    </div>
+</section>
 {% endblock %}

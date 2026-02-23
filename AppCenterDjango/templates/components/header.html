@@ -9,29 +9,36 @@
                 </div>
             </div>
 
-            <form class="search-box" method="get" action="/search">
+            <div class="search-box">
                 <input
                     type="search"
-                    name="q"
                     class="search-input"
-                    placeholder="جستجوی محصول..."
-                    value="{{ search_query|default:"" }}"
+                    placeholder="جستجوی محصول، دسته‌بندی یا برند..."
                 />
                 <span class="search-icon">🔍</span>
-            </form>
+            </div>
 
             <div class="header-actions">
-                {% if user %}
-                <a href="/account" class="header-link">حساب من</a>
-                {% else %}
-                <a href="/auth" class="header-link">ورود / ثبت‌نام</a>
-                {% endif %}
-
-                <a href="/cart" class="btn-cart">
+                <a href="/login" class="header-link">ورود / ثبت‌نام</a>
+                <button class="btn-cart">
                     <span>سبد خرید</span>
-                    <span class="btn-cart-count">{{ cart_count|default:"0" }}</span>
-                </a>
+                    <span class="btn-cart-count">۰</span>
+                </button>
             </div>
         </div>
     </div>
+
+    <nav class="nav-cats">
+        <div class="container">
+            <div class="nav-cats-inner">
+                <div class="cat-pill cat-pill--active">پیشنهاد ویژه امروز</div>
+                <div class="cat-pill">خانه و آشپزخانه</div>
+                <div class="cat-pill">تنقلات و خوراکی</div>
+                <div class="cat-pill">لوازم تحریر</div>
+                <div class="cat-pill">آرایشی و بهداشتی</div>
+                <div class="cat-pill">نظم‌دهنده و سازمان‌دهی</div>
+                <div class="cat-pill">فصلی و مناسبتی</div>
+            </div>
+        </div>
+    </nav>
 </header>

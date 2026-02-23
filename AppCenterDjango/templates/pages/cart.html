@@ -1,15 +1,34 @@
-{% extends "base.html" %} {% block content %}
-
-<h1>سبد خرید شما</h1>
-
-{% if cart_items %}
-<ul>
-    {% for item in cart_items %}
-    <li>{{ item.title }} - {{ item.quantity }} × {{ item.price }}</li>
-    {% endfor %}
-</ul>
-
-<div>جمع کل: {{ total_price }} تومان</div>
-{% else %}
-<p>سبد خرید شما خالی است.</p>
-{% endif %} {% endblock %}
+{% extends "base.html" %} {% block title %}سبد خرید - دالر تری فارسی{% endblock %} {%
+block description %}نمایش محصولات موجود در سبد خرید{% endblock %} {% block content %}
+<section>
+    <h1 class="section-title">سبد خرید شما</h1>
+    {% if cart.items %}
+    <div class="products-grid">
+        {% for item in cart.items %}
+        <article class="product-card">
+            <div class="product-image">{{ item.image or "تصویر محصول" }}</div>
+            <h3 class="product-title">{{ item.title }}</h3>
+            <div class="product-meta">
+                <span class="product-price">{{ item.price }}</span>
+                <span class="product-tag">{{ item.category }}</span>
+            </div>
+            <div class="product-actions">
+                <button class="btn-add">حذف از سبد</button>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+    <div style="margin-top: 1rem">
+        <strong>جمع کل: {{ cart.total_price }}</strong>
+    </div>
+    <a
+        href="/checkout"
+        class="btn-primary"
+        style="margin-top: 1rem; display: inline-block"
+        >ادامه به پرداخت</a
+    >
+    {% else %}
+    <p>سبد خرید شما خالی است.</p>
+    {% endif %}
+</section>
+{% endblock %}

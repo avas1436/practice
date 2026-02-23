@@ -2,18 +2,20 @@
 <html lang="fa" dir="rtl">
     <head>
         <meta charset="UTF-8" />
-        <title>{{ title }}</title>
-        <meta name="description" content="{{ description }}" />
+        <title>{% block title %}دالر تری فارسی{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="{% block description %}فروشگاه آنلاین دالر تری فارسی{% endblock %}"
+        />
         <link rel="stylesheet" href="/static/style.css" />
     </head>
     <body>
         <div class="page">
-            {% include "components/header.html" %} {% block category_nav %}{% endblock%}
+            {% include "components/header.html" %}
             <main>
                 <div class="container">{% block content %}{% endblock %}</div>
             </main>
-
             {% include "components/footer.html" %}
         </div>
     </body>

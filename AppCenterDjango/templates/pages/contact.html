@@ -1,12 +1,21 @@
-{% extends "base.html" %} {% block content %}
-
-<h1>تماس با ما</h1>
-
-<form method="post" action="/contact">
-    <input type="text" name="name" placeholder="نام" />
-    <input type="email" name="email" placeholder="ایمیل" />
-    <textarea name="message" placeholder="پیام شما"></textarea>
-    <button type="submit">ارسال</button>
-</form>
-
+{% extends "base.html" %} {% block title %}تماس با ما - دالر تری فارسی{% endblock %} {%
+block description %}راه‌های ارتباط با فروشگاه دالر تری{% endblock %} {% block content %}
+<section>
+    <h1 class="section-title">تماس با ما</h1>
+    <p class="section-subtitle">
+        برای سوالات، پیشنهادات یا مشکلات خود می‌توانید با ما در تماس باشید.
+    </p>
+    <div class="hero-card">
+        <h2 class="hero-title">ایمیل</h2>
+        <p>support@dalertree.ir</p>
+    </div>
+    <div class="hero-card">
+        <h2 class="hero-title">شماره تلفن</h2>
+        <p>۰۲۱-۱۲۳۴۵۶۷۸</p>
+    </div>
+    <div class="hero-card">
+        <h2 class="hero-title">آدرس</h2>
+        <p>تهران، ایران</p>
+    </div>
+</section>
 {% endblock %}

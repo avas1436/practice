@@ -1,19 +1,15 @@
 <article class="product-card">
-    <div class="product-image">
-        <img src="{{ product.image_url }}" alt="{{ product.title }}" />
-    </div>
-
+    <div class="product-image">{{ product.image or "تصویر محصول" }}</div>
     <h3 class="product-title">{{ product.title }}</h3>
-
     <div class="product-meta">
-        <span class="product-price"> {{ product.price }} تومان </span>
-        <span class="product-tag"> {{ product.category_name }} </span>
+        <span class="product-price">{{ product.price }}</span>
+        <span class="product-tag">{{ product.category }}</span>
     </div>
-
     <div class="product-actions">
-        <form method="post" action="/cart/add">
-            <input type="hidden" name="product_id" value="{{ product.id }}" />
-            <button class="btn-add">افزودن به سبد</button>
-        </form>
+        {% if product.add_to_cart %}
+        <button class="btn-add">{{ product.add_to_cart }}</button>
+        {% endif %} {% if product.badge %}
+        <span class="product-badge-small">{{ product.badge }}</span>
+        {% endif %}
     </div>
 </article>

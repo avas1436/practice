@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %}ورود - دالر تری فارسی{% endblock %} {% block
+description %}ورود کاربران به حساب کاربری{% endblock %} {% block content %}
+<section style="max-width: 400px; margin: auto">
+    <h1 class="section-title">ورود</h1>
+    <form method="POST" action="/login">
+        <div class="hero-card" style="display: flex; flex-direction: column; gap: 1rem">
+            <input
+                type="email"
+                name="email"
+                placeholder="ایمیل"
+                class="search-input"
+                required
+            />
+            <input
+                type="password"
+                name="password"
+                placeholder="رمز عبور"
+                class="search-input"
+                required
+            />
+            <button type="submit" class="btn-primary">ورود</button>
+            <a href="/register" class="btn-ghost" style="text-align: center">ثبت‌نام</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

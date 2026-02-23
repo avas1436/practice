@@ -2,12 +2,9 @@
     <div class="container">
         <div class="nav-cats-inner">
             {% for cat in categories %}
-            <a
-                href="/category/{{ cat.slug }}"
-                class="cat-pill {% if current_category == cat.slug %}cat-pill--active{% endif %}"
-            >
+            <div class="cat-pill {% if cat.active %}cat-pill--active{% endif %}">
                 {{ cat.name }}
-            </a>
+            </div>
             {% endfor %}
         </div>
     </div>

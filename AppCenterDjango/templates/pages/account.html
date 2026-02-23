@@ -1,15 +1,21 @@
-{% extends "base.html" %} {% block content %}
-
-<h1>سبد خرید شما</h1>
-
-{% if cart_items %}
-<ul>
-    {% for item in cart_items %}
-    <li>{{ item.title }} - {{ item.quantity }} × {{ item.price }}</li>
-    {% endfor %}
-</ul>
-
-<div>جمع کل: {{ total_price }} تومان</div>
-{% else %}
-<p>سبد خرید شما خالی است.</p>
-{% endif %} {% endblock %}
+{% extends "base.html" %} {% block title %}حساب کاربری - دالر تری فارسی{% endblock %} {%
+block description %}اطلاعات و سفارش‌های کاربر{% endblock %} {% block content %}
+<section>
+    <h1 class="section-title">حساب کاربری</h1>
+    <div class="hero-card">
+        <h2 class="hero-title">اطلاعات شخصی</h2>
+        <p>نام: {{ user.name }}</p>
+        <p>ایمیل: {{ user.email }}</p>
+    </div>
+    <div class="hero-card">
+        <h2 class="hero-title">سفارش‌های اخیر</h2>
+        <ul>
+            {% for order in orders %}
+            <li>سفارش #{{ order.id }} - {{ order.total_price }}</li>
+            {% else %}
+            <li>هیچ سفارشی ثبت نشده است.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}
