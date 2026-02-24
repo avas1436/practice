@@ -1,18 +1,12 @@
-{% extends 'base.html' %} {% block title %}دسته‌بندی | دالر تری فارسی{% endblock %} {%
-block content %}
+{% extends 'base.html' %} {% block title %}دسته‌بندی | دالر تری فارسی{% endblock %} {% block content %}
 <div class="section-header">
-    <h1 class="section-title">دسته‌بندی: خانه و آشپزخانه</h1>
-    <span class="section-subtitle">۱۲ محصول یافت شد.</span>
+    <h1 class="section-title">دسته‌بندی: {{ category_name }}</h1>
+    <span class="section-subtitle">{{ products|length }} محصول یافت شد.</span>
 </div>
 
 <div class="products-grid">
-    {% include 'components/product_card.html' with title="لیوان شیشه‌ای ساده"
-    price="۴۹,۰۰۰ تومان" category="خانه و آشپزخانه" badge="ارسال سریع" %} {% include
-    'components/product_card.html' with title="ست قاشق و چنگال ۶ نفره" price="۸۹,۰۰۰
-    تومان" category="خانه و آشپزخانه" badge="پرفروش" %} {% include
-    'components/product_card.html' with title="ظرف نگهدارنده مواد غذایی" price="۶۵,۰۰۰
-    تومان" category="خانه و آشپزخانه" badge="" %} {% include
-    'components/product_card.html' with title="دستکش فر" price="۳۵,۰۰۰ تومان"
-    category="خانه و آشپزخانه" badge="موجودی محدود" %}
+    {% for product in products %} {% include 'components/product_card.html' %} {% empty %}
+    <p>هیچ محصولی یافت نشد.</p>
+    {% endfor %}
 </div>
 {% endblock %}

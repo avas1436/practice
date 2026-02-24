@@ -123,3 +123,7 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+
+MEDIA_URL = "/media/"  # URL که مرورگر با آن به فایل‌ها دسترسی دارد
+MEDIA_ROOT = BASE_DIR / "media"  # پوشه‌ای که تصاویر ذخیره می‌شوند

@@ -1,12 +1,10 @@
 {% extends "base.html" %} {% block title %}Products{% endblock %} {% block content %}
 <h2>Products</h2>
 
-{% for product in products %}
-<div>
-    <h3>{{ product.name }}</h3>
-    <p>{{ product.description }}</p>
-    <p>${{ product.price }}</p>
+<div class="products-container">
+    {% for product in products %} {% include "components/product_card.html" %} {% empty %}
+    <p>No products available.</p>
+    {% endfor %}
 </div>
-{% empty %}
-<p>No products available.</p>
-{% endfor %} {% endblock %}
+
+{% endblock %}
