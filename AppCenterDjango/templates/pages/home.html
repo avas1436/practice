@@ -1,24 +1,24 @@
-{% extends 'base.html' %} {% load static %} {% block title %}خانه | دالر تری فارسی{%
-endblock %} {% block content %} {% include 'components/hero.html' %}
+{% extends "base.html" %}
 
-<section>
-    <div class="section-header">
-        <div>
+{% block title %}خانه | دالر تری فارسی{% endblock %}
+
+{% block content %}
+    {% include "components/hero.html" %}
+
+    <section>
+        <div class="section-header">
             <h2 class="section-title">محصولات منتخب امروز</h2>
-            <p class="section-subtitle">بر اساس بازدیدهای اخیر و پیشنهادهای ویژه</p>
+            <p class="section-subtitle">آخرین محصولات اضافه‌شده به فروشگاه</p>
         </div>
-        <div class="section-link">مشاهده همه محصولات</div>
-    </div>
 
-    <div class="products-grid">
-        {% include 'components/product_card.html' with title="لیوان شیشه‌ای ساده"
-        price="۴۹,۰۰۰ تومان" category="خانه و آشپزخانه" badge="ارسال سریع" %} {% include
-        'components/product_card.html' with title="ست خودکار رنگی برای یادداشت"
-        price="۳۹,۰۰۰ تومان" category="لوازم تحریر" badge="پرفروش" %} {% include
-        'components/product_card.html' with title="ظرف نظم‌دهنده یخچال" price="۵۹,۰۰۰
-        تومان" category="نظم‌دهنده" badge="موجودی محدود" %} {% include
-        'components/product_card.html' with title="اسنک و چیپس میکس" price="۲۹,۰۰۰
-        تومان" category="تنقلات" badge="تازه‌رسیده" %}
-    </div>
-</section>
+        <div class="products-grid">
+            {% if featured_products %}
+                {% for product in featured_products %}
+                    {% include "components/product_card.html" with product=product %}
+                {% endfor %}
+            {% else %}
+                <p class="text-center mt-4">هیچ محصولی موجود نیست.</p>
+            {% endif %}
+        </div>
+    </section>
 {% endblock %}

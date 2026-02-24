@@ -1,10 +1,3 @@
-@font-face {
-    font-family: "Kalameh-Medium";
-    src: url("/static/fonts/Kalameh-Medium.ttf") format("ttf");
-    font-weight: 500; /* medium */
-    font-style: normal;
-}
-
 :root {
     --color-primary: #0f766e;
     --color-primary-soft: #ccfbf1;
@@ -14,7 +7,6 @@
     --radius-lg: 12px;
     --radius-md: 8px;
     --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
-    font-family: "Kalameh-Medium", system-ui, sans-serif;
 }
 
 * {
@@ -24,11 +16,17 @@
 }
 
 body {
-    font-family: inherit; /* ارث‌بری از :root */
+    font-family:
+        "Kalameh-Medium",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-weight: 500;
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
-    font-weight: 500;
 }
 
 a {
@@ -456,7 +454,8 @@ main {
 .product-image {
     border-radius: var(--radius-md);
     background: linear-gradient(135deg, #f9fafb, #e5e7eb);
-    height: 140px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -464,10 +463,30 @@ main {
     color: #9ca3af;
 }
 
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+    color: #9ca3af;
+}
+
 .product-title {
     font-size: 0.9rem;
     font-weight: 600;
     min-height: 2.4em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .product-meta {
@@ -652,4 +671,11 @@ footer {
 
 .mt-4 {
     margin-top: 2rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--color-muted);
+    font-size: 1rem;
 }

@@ -1,18 +1,20 @@
-{% comment %} variable: product {% endcomment %}
+{% comment %} expects variable: product {% endcomment %}
 <article class="product-card">
-    {% if product.image %}
     <div class="product-image">
+        {% if product.image %}
         <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+        {% else %}
+        <span>تصویر موجود نیست</span>
+        {% endif %}
     </div>
-    {% else %}
-    <div class="product-image">تصویر موجود نیست</div>
-    {% endif %}
 
     <h3 class="product-title">{{ product.name }}</h3>
 
     <div class="product-meta">
         <span class="product-price">{{ product.sell_price|floatformat:0 }} تومان</span>
+        {% if product.category %}
         <span class="product-tag">{{ product.category }}</span>
+        {% endif %}
     </div>
 
     <div class="product-actions">

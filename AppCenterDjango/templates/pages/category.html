@@ -1,12 +1,18 @@
-{% extends 'base.html' %} {% block title %}دسته‌بندی | دالر تری فارسی{% endblock %} {% block content %}
+{% extends 'base.html' %}
+
+{% block title %}دسته‌بندی | دالر تری{% endblock %}
+
+{% block content %}
 <div class="section-header">
     <h1 class="section-title">دسته‌بندی: {{ category_name }}</h1>
     <span class="section-subtitle">{{ products|length }} محصول یافت شد.</span>
 </div>
 
 <div class="products-grid">
-    {% for product in products %} {% include 'components/product_card.html' %} {% empty %}
-    <p>هیچ محصولی یافت نشد.</p>
+    {% for product in products %}
+        {% include 'components/product_card.html' with product=product %}
+    {% empty %}
+        <p>هیچ محصولی یافت نشد.</p>
     {% endfor %}
 </div>
 {% endblock %}

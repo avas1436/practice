@@ -1,24 +1,22 @@
 <!doctype html>
 {% load static %}
 <html lang="fa" dir="rtl">
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}دالر تری فارسی{% endblock %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-            name="description"
-            content="{% block description %}فروشگاه آنلاین دالر تری فارسی؛ محصولات متنوع با قیمت‌های اقتصادی.{% endblock %}"
-        />
-        <link rel="stylesheet" href="{% static 'style.css' %}" />
-    </head>
-    <body>
-        <div class="page">
-            {% include 'components/header.html' %} {% include 'components/category_nav.html' %}
-            <main>
-                <div class="container">{% block content %}{% endblock %}</div>
-            </main>
-
-            {% include 'components/footer.html' %}
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}دالر تری{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="page">
+        {% include 'components/header.html' %}
+        {% include 'components/category_nav.html' %}
+        <main>
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        {% include 'components/footer.html' %}
+    </div>
+</body>
 </html>
